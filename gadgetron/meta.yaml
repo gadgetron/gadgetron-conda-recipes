@@ -1,0 +1,30 @@
+package:
+  name: gadgetron
+  version: "3.8.0"
+    
+source:
+  git_url: https://github.com/gadgetron/gadgetron.git
+  
+requirements:
+  build:
+    - cmake
+    - boost
+    - fftw
+    - ace
+    - ismrmrd
+    - siemens_to_ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
+
+  run:
+    - fftw
+    - ace
+    - ismrmrd
+    - siemens_to_ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
+
+about:
+    home: http://gadgetron.github.io
+    license: Open Source
+    summary: 'An open source framework for medical image reconstruction.'
