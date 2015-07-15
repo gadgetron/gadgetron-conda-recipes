@@ -16,12 +16,12 @@ if [ `uname` == Darwin ]; then
 	-D CMAKE_CXX_FLAGS="${CXXFLAGS}" \
 	-D CMAKE_SHARED_LINKER_FLAGS="${LINKFLAGS}" \
 	-D BOOST_ROOT="${PREFIX}/lib" \
-        -D BUILD_DYNAMICT=YES \
+        -D BUILD_DYNAMIC=YES \
         -D CMAKE_INSTALL_PREFIX="${PREFIX}" ..
 fi
 
 if [ `uname` == Linux ]; then
-    cmake -D BUILD_DYNAMICT=YES \
+    cmake -D BUILD_DYNAMIC=YES \
         -D CMAKE_INSTALL_PREFIX=$PREFIX ..
 fi
 
