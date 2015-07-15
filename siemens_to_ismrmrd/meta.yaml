@@ -1,0 +1,26 @@
+package:
+  name: siemens_to_ismrmrd
+  version: "1.0.0"
+    
+source:
+  git_url: https://github.com/ismrmrd/siemens_to_ismrmrd.git
+  
+requirements:
+  build:
+    - cmake
+    - boost
+    - ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
+
+
+  run:
+    - boost
+    - ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
+
+about:
+    home: http://ismrmrd.github.io
+    license: Open Source
+    summary: 'Converter from Siemens Raw MRI Data to ISMRM Raw Data Format'
