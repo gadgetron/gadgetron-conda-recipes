@@ -14,8 +14,6 @@ requirements:
     - ace
     - numpy
     - ismrmrd
-    - ismrmrd-python
-    - ismrmrd-python-tools
 
   run:
     - boost
@@ -26,6 +24,7 @@ requirements:
     - ismrmrd
     - ismrmrd-python
     - ismrmrd-python-tools
+    - siemens_to_ismrmrd
 
 about:
     home: http://gadgetron.github.io
