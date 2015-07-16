@@ -4,36 +4,25 @@ mkdir build
 cd build
 
 if [ `uname` == Darwin ]; then
-
-    MACOSX_VERSION_MIN=10.8
-    CXXFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
-    LINKFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN} "
-
-    #ARMA_LIB="libarmadillo.dylib"
-    #PY_LIB="libpython2.7.dylib"
-    
     cmake \
-	-D CMAKE_OSX_DEPLOYMENT_TARGET="10.8" \
-        -D CMAKE_INSTALL_PREFIX="${PREFIX}" ..
-
-    #    \
-#	-D CMAKE_BUILD_TYPE=Debug                              \
-#	-D CMAKE_CXX_FLAGS="${CXXFLAGS}"                       \
-#	-D CMAKE_SHARED_LINKER_FLAGS="${LINKFLAGS}"            \
-#	-D BOOST_ROOT="${PREFIX}/lib"                          \
-#       -D ARMADILLO_LIBRARY="${PREFIX}/lib/${ARMA_LIB}"       \
-#       -D ARMADILLO_INCLUDE_DIR="${PREFIX}/include/"          \
-#	-D PYTHON_EXECUTABLE="$PREFIX/bin/python"              \
-#	-D PYTHON_INCLUDE_DIR="$PREFIX/include/python2.7/"     \
-#	-D PYTHON_LIBRARY="$PREFIX/lib/${PY_LIB}"              \
-
+	-DCMAKE_OSX_DEPLOYMENT_TARGET=10.8                                      \
+	-DCMAKE_CXX_FLAGS="-mmacosx-version-min=10.8 -std=c++11 -stdlib=libc++" \
+	-DCMAKE_SHARED_LINKER_FLAGS="-mmacosx-version-min=10.8 -stdlib=libc++"  \
+	-DPYTHON_EXECUTABLE="${PREFIX}/bin/python"                              \
+	-DPYTHON_INCLUDE_DIR="${PREFIX}/include/python2.7"                      \
+	-DPYTHON_LIBRARY="${PREFIX}/lib/libpython2.7.dylib"                     \
+    	-DCMAKE_INSTALL_PREFIX="${PREFIX}" ..
 fi
 
 if [ `uname` == Linux ]; then
-    PY_LIB="libpython2.7.so"
+    cmake \
+	-DPYTHON_EXECUTABLE="$PREFIX/bin/python"         \
+	-DPYTHON_INCLUDE_DIR="$PREFIX/include/python2.7" \
+	-DPYTHON_LIBRARY="$PREFIX/lib/libpython2.7.so"   \
+    	-DCMAKE_INSTALL_PREFIX="${PREFIX}" ..
 fi
 
-make
+make -j${CPU_COUNT}
 make install
 
 

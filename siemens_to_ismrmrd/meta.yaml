@@ -8,19 +8,12 @@ source:
 requirements:
   build:
     - cmake
-    - boost
     - ismrmrd
-    - libxslt [not win]
-    - libxml2 [not win]
-
 
   run:
-    - boost
     - ismrmrd
-    - libxslt [not win]
-    - libxml2 [not win]
 
 about:
     home: http://ismrmrd.github.io
-    license: Open Source
+    license: Pubclic Domain
     summary: 'Converter from Siemens Raw MRI Data to ISMRM Raw Data Format'

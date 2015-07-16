@@ -9,16 +9,20 @@ source:
 requirements:
   build:
     - cmake
-    - hdf5
     - boost
+    - hdf5
     - fftw
+    - libxslt [not win]
+    - libxml2 [not win]
 
   run:
-    - hdf5
     - boost
+    - hdf5
     - fftw
+    - libxslt [not win]
+    - libxml2 [not win]
 
 about:
     home: http://ismrmrd.github.io
-    license: Open Source
+    license: Public Domain
     summary: 'ISMRM Raw Data Format'

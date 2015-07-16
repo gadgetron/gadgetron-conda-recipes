@@ -12,21 +12,22 @@ requirements:
     - fftw
     - armadillo
     - ace
+    - numpy
     - ismrmrd
-    - siemens_to_ismrmrd
-    - libxslt [not win]
-    - libxml2 [not win]
+    - ismrmrd-python
+    - ismrmrd-python-tools
 
   run:
+    - boost
     - fftw
     - armadillo
     - ace
+    - numpy
     - ismrmrd
-    - siemens_to_ismrmrd
-    - libxslt [not win]
-    - libxml2 [not win]
+    - ismrmrd-python
+    - ismrmrd-python-tools
 
 about:
     home: http://gadgetron.github.io
-    license: Open Source
+    license: Public Domain
     summary: 'An open source framework for medical image reconstruction.'
