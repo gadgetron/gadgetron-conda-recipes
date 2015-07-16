@@ -2,11 +2,15 @@
 # inspired by build script for Arch Linux fftw pacakge:
 # https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/fftw
 
-if [`uname` == Linux ]; then
+if [ `uname` == Linux ]; then
     CFLAGS="-fPIC"
+    CONFIGURE="./configure --prefix=$PREFIX --enable-shared --enable-threads --disable-fortran --enable-openmp"
 fi
 
-CONFIGURE="./configure --prefix=$PREFIX --enable-shared --enable-threads --disable-fortran --enable-openmp"
+if [ `uname` == Darwin ]; then
+    CONFIGURE="./configure --prefix=$PREFIX --enable-shared --enable-threads --disable-fortran"
+fi
+
 
 # Single precision (fftw libraries have "f" suffix)
 $CONFIGURE --enable-float
