@@ -10,6 +10,7 @@ requirements:
     - cmake
     - boost
     - fftw
+    - armadillo
     - ace
     - ismrmrd
     - siemens_to_ismrmrd
@@ -18,6 +19,7 @@ requirements:
 
   run:
     - fftw
+    - armadillo
     - ace
     - ismrmrd
     - siemens_to_ismrmrd
