@@ -14,11 +14,12 @@ fi
 
 if [ `uname` == Linux ]; then
     cmake \
+	-DCMAKE_FIND_ROOT_PATH=$PREFIX \
+	-DBoost_NO_BOOST_CMAKE=ON \
 	-DBUILD_DYNAMIC=YES \
-        -DCMAKE_INSTALL_PREFIX="${PREFIX}" ..
+	-DCMAKE_INSTALL_PREFIX=$PREFIX .. 
 fi
 
 make
 make install
-
 

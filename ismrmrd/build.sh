@@ -12,7 +12,9 @@ if [ `uname` == Darwin ]; then
 fi
 
 if [ `uname` == Linux ]; then
-    cmake -DCMAKE_INSTALL_PREFIX=$PREFIX ..
+    cmake \
+	-DCMAKE_FIND_ROOT_PATH=$PREFIX \
+	-DCMAKE_INSTALL_PREFIX=$PREFIX .. 
 fi
 
 make

@@ -3,15 +3,23 @@ package:
   version: "1.0.0"
     
 source:
-  git_url: https://github.com/ismrmrd/siemens_to_ismrmrd.git
+  #TODO Fix this asap
+  git_url: file:///data/inatisj/local/src/siemens_to_ismrmrd
+  #git_url: https://github.com/ismrmrd/siemens_to_ismrmrd.git
   
 requirements:
   build:
     - cmake
+    - boost
     - ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
 
   run:
+    - boost
     - ismrmrd
+    - libxslt [not win]
+    - libxml2 [not win]
 
 about:
     home: http://ismrmrd.github.io
