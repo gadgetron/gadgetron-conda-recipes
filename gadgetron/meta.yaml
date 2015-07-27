@@ -7,6 +7,7 @@ source:
   
 requirements:
   build:
+    - gcc [linux]
     - cmake
     - boost
     - fftw
@@ -14,14 +15,18 @@ requirements:
     - ace
     - numpy
     - ismrmrd
+    - dcmtk
+    - gtest
 
   run:
+    - libgcc [linux]
     - boost
     - fftw
     - armadillo
     - ace
     - numpy
     - ismrmrd
+    - dcmtk
     - ismrmrd-python
     - ismrmrd-python-tools
     - siemens_to_ismrmrd

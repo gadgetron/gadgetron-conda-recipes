@@ -1,0 +1,22 @@
+package:
+    name: dcmtk
+    version: "3.6.1"
+
+source:
+    fn: dcmtk-3.6.1.tar.gz
+    url: http://dicom.offis.de/download/dcmtk/dcmtk360/dcmtk-3.6.0.tar.gz
+    md5: 924210126ed414104fe885fb65c952ac27938a05
+
+
+requirements:
+    build:
+      - cmake
+      - gcc >=4.7
+      - libpng
+      - libtiff
+      - libiconv
+
+about:
+    home: http://dicom.offis.de
+    summary: "DCMTK is a collection of libraries and applications implementing large parts the DICOM standard"
+
