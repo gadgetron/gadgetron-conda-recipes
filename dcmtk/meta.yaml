@@ -11,10 +11,10 @@ source:
 requirements:
     build:
       - cmake
-      - gcc >=4.7
+      - gcc >=4.7 [linux]
       - libpng
       - libtiff
-      - libiconv
+      #- libiconv
 
 about:
     home: http://dicom.offis.de
