@@ -1,0 +1,5 @@
+package: unzip
+platform: linux-64
+engine: python=3
+script: conda build .
+build_targets: conda
