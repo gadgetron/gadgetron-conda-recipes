@@ -9,6 +9,7 @@ source:
 
 requirements:
     build:
+      - unzip
       - cmake
 
 about:

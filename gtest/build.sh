@@ -8,7 +8,6 @@ cd build
 
 
 if [ `uname` == Darwin ]; then
-    DCMTK_HOME=$PREFIX \
     cmake \
         -DCMAKE_FIND_ROOT_PATH=$PREFIX \
         -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8                                      \
@@ -18,14 +17,12 @@ if [ `uname` == Darwin ]; then
 fi
 
 if [ `uname` == Linux ]; then
-    CC=$PREFIX/bin/gcc CCX=$PREFIX/bin/g++ \
-    DCMTK_HOME=$PREFIX \
     cmake \
         -DCMAKE_FIND_ROOT_PATH=$PREFIX \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" ..
 fi
 
-make -j4
+make
 
 mkdir -p $PREFIX/lib
 mkdir -p $PREFIX/include

@@ -1,0 +1,7 @@
+package: gtest
+
+script:
+  - conda config --add channels https://conda.anaconda.org/inati
+  - conda build .
+
+build_targets: conda
