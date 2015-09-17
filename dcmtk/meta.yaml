@@ -12,9 +12,11 @@ requirements:
     build:
       - cmake
       - gcc >=4.7 [linux]
+      - openssl
       - libpng
       - libtiff
-      #- libiconv
+      - libxml2
+      - zlib
 
 about:
     home: http://dicom.offis.de

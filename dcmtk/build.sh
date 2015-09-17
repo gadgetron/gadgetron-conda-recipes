@@ -14,15 +14,15 @@ if [ `uname` == Darwin ]; then
 fi
 
 if [ `uname` == Linux ]; then
-    CC=$PREFIX/bin/gcc CCX=$PREFIX/bin/g++ \
     DCMTK_HOME=$PREFIX \
     cmake \
         -DCMAKE_FIND_ROOT_PATH=$PREFIX \
-        -DCMAKE_INSTALL_PREFIX="${PREFIX}" ..
+	-DCMAKE_INSTALL_PREFIX=${PREFIX} ..
 fi
 
-make -j4
+make -j${CPU_COUNT}
 make install
 
-cd ..
-rm -rf build
+
+
+

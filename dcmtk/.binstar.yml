@@ -1,0 +1,13 @@
+package: dcmtk
+
+platform: linux-64
+
+env:
+  - CXX=g++
+
+script:
+  - conda config --add channels https://conda.anaconda.org/inati
+  - conda build .
+
+build_targets:
+  - conda
