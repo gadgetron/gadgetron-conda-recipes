@@ -4,11 +4,11 @@ package:
 
 source:
   git_url: https://github.com/gadgetron/gadgetron.git
-  #git_rev: 3.8.2
+  git_rev: 3.8.2
 
 requirements:
   build:
-    #number: 0
+    number: 0
     - gcc [linux]
     - cmake
     - boost

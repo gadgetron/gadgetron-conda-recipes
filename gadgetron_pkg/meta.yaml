@@ -1,0 +1,26 @@
+package:
+  name: gadgetron_pkg
+  version: "3.8.2"
+
+requirements:
+  build:
+    number: 0
+    - python
+    - numpy
+    - gadgetron
+
+  run:
+    - python
+    - numpy
+    - scipy
+    - matplotlib
+    - ismrmrd-python
+    - ismrmrd-python-tools
+    - siemens_to_ismrmrd
+    - bruker_to_ismrmrd
+    - philips_to_ismrmrd
+
+about:
+    home: http://gadgetron.github.io
+    license: Public Domain
+    summary: 'Meta package for Gadgetron, an open source framework for medical image reconstruction.'
