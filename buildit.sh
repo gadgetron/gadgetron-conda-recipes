@@ -1,20 +1,25 @@
 #!/bin/bash
 
 CHANNEL=inati
-PY_VER=3.4
+PY_VER=3.5
 NPY_VER=1.9
 
-PKG=gadgetron
+# Note, these are in the order in which they need to be built
+# for a clean setup.
+DEPS='ismrmrd
+      gadgetron-base
+      ismrmrd-python
+      ismrmrd-python-tools
+      siemens_to_ismrmrd'
 
-# Figure out what we are building
-BLD_STR="--python ${PY_VER} --numpy ${NPY_VER}
-         --override-channels -c ${CHANNEL} -c defaults ${PKG}"
-OUTPUTS=$(conda build --output $BLD_STR)
+# Rebuild the dependencies and upload as needed
+echo "Collecting dependencies"
+conda build --python ${PY_VER} --numpy ${NPY_VER} \
+  --skip-existing --override-channels -c ${CHANNEL} -c defaults ${DEPS}
 
-# Do it
-conda build --no-anaconda-upload $BLD_STR
-
-# Upload the results
-anaconda upload --force $OUTPUTS
+# Build the metapackage and force upload
+echo "Assembling package"
+conda build --python ${PY_VER} --numpy ${NPY_VER} \
+  --override-channels -c ${CHANNEL} -c defaults gadgetron
 
 echo "All done!"
