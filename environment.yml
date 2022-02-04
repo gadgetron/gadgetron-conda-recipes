@@ -1,0 +1,7 @@
+name: gadgetron-conda-recipes
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - conda-build
+  - anaconda-client
