@@ -11,17 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+      - uses: conda-incubator/setup-miniconda@v2
         with:
+          activate-environment: gadgetron-conda-recipes
+          environment-file: environment.yml
           python-version: 3.9
-      - name: Install dependencies
-        run: |
-          # $CONDA is an environment variable pointing to the root of the miniconda directory
-          $CONDA/bin/conda env update --file environment.yml --name base
-          $CONDA/bin/conda init
+          auto-activate-base: false
       - name: Testing conda install
+        shell: bash -l {0}
         run: |
-          $CONDA/bin/conda activate base
           conda build -h
           anaconda upload -h
