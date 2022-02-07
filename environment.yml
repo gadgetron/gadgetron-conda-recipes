@@ -5,3 +5,4 @@ channels:
 dependencies:
   - conda-build
   - anaconda-client
+  - yq=2.12.0
