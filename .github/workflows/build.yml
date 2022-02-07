@@ -1,0 +1,13 @@
+on:
+  pull_request:
+    branches:    
+      - master
+  pr:
+    branches:
+      - master
+
+jobs:
+  build-conda-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is a test of workflow"
