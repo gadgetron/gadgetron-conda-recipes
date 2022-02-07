@@ -19,6 +19,7 @@ jobs:
           auto-activate-base: false
       - name: Testing conda install
         shell: bash -l {0}
+        env:
+          ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          conda build -h
-          anaconda upload -h
+          ./build.sh --token "$ANACONDA_TOKEN" --push --force

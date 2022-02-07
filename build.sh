@@ -12,7 +12,7 @@ Usage: $0 [options]
 
 Options:
   -p|--package <package>                 Package to build (defaults to all)
-  -c|--channel <channel>                 Anaconda.org channel (default: 'gadgetron')
+  -u|--user <user>                    Anaconda.org channeluser or organization (default: 'gadgetron')
   -t|--token <token>                     Token for uploading to anaconda.org
   --push                                 Push package to anaconda channel
   --force                                Force push even if package exists  
@@ -22,7 +22,7 @@ EOF
 
 all_packages=("ismrmrd" "ismrmrd-python" "siemens_to_ismrmrd" "range-v3" "gadgetron-python" "gadgetron")
 packages_to_build=()
-channel="gadgetron"
+user="gadgetron"
 
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -33,8 +33,8 @@ while [[ $# -gt 0 ]]; do
       shift
       shift
       ;;
-    -c|--channel)
-      channel="$2"
+    -u|--user)
+      user="$2"
       shift
       shift
       ;;
@@ -75,7 +75,7 @@ fi
 
 # Build up channel directives
 global_channels=$(cat $(dirname "$0")/global.yml | yq -r '.channels | join(" -c ")')
-channel_directive="-c https://conda.anaconda.org/$channel -c $global_channels"
+channel_directive="-c https://conda.anaconda.org/$user -c $global_channels"
 
 force_directive="--skip-existing"
 if [[ -n ${force:-} ]]; then
@@ -93,7 +93,7 @@ do
         if [ -d "$dirname" ]; then
           for filename in $dirname/*; do
             if [[ "${filename: -8}" == ".tar.bz2" ]] && [[ "$filename" =~ ^${dirname}/${package_name}-${package_version} ]]; then
-              anaconda -t "$token" upload -u $channel $force_directive $filename
+              anaconda -t "$token" upload -u $user $force_directive $filename
             fi
           done
         fi
