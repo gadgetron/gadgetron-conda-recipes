@@ -85,13 +85,15 @@ fi
 for p in "${packages_to_build[@]}"
 do
     tmp_dir=$(mktemp -d -t "conda-build-${p}-XXXXXXXXXX")
+    package_name=$(cat "$(dirname "$0")/${p}/meta.yaml" | yq -r .package.name)
+    package_version=$(cat "$(dirname "$0")/${p}/meta.yaml" | yq -r .package.version)
     bash -c "conda build --no-anaconda-upload --output-folder $tmp_dir $channel_directive $p"
     if [[ -n "${push:-}" ]]; then
       for dirname in $tmp_dir/*; do
         if [ -d "$dirname" ]; then
           for filename in $dirname/*; do
-            if [ "${filename: -8}" == ".tar.bz2" ]; then
-              anaconda -t "$token" upload -c $channel $force_directive $filename
+            if [[ "${filename: -8}" == ".tar.bz2" ]] && [[ "$filename" =~ ^${dirname}/${package_name}-${package_version} ]]; then
+              anaconda -t "$token" upload -u $channel $force_directive $filename
             fi
           done
         fi
