@@ -38,7 +38,7 @@ And you should be able to run the Gadgetron. Test capabilities with `gadgetron -
 Use the [`build.sh`](build.sh) script at the root to build all or a specific packe and optionally push to anaconda.org. For example, to build and force push the ismrmrd package, use:
 
 ```bash
-./build.sh -p ismrmrd
+./build.sh -p ismrmrd --token <TOKEN> -u <user or org> --push --force
 ```
 
 If you would like to upload the packages, do `conda config --set anaconda_upload yes` and log in with your anaconda.org account first.
