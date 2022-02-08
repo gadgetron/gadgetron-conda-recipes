@@ -17,9 +17,17 @@ jobs:
           environment-file: environment.yml
           python-version: 3.9
           auto-activate-base: false
-      - name: Testing conda install
+      - name: Build conda packages
         shell: bash -l {0}
+        if: ${{ github.event_name == 'pull_request' }}
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          ./build.sh --token "$ANACONDA_TOKEN" --push --force
+          ./build.sh
+      - name: Build and push conda packages
+        shell: bash -l {0}
+        if: ${{ github.event_name == 'push' }}
+        env:
+          ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
+        run: |
+          ./build.sh --token "$ANACONDA_TOKEN" --push
