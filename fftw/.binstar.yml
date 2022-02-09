@@ -1,7 +1,0 @@
-package: fftw
-
-script:
-  - conda build .
-
-build_targets:
-  - conda
