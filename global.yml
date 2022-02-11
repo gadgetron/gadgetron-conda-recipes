@@ -1,5 +1,4 @@
 channels:
-  - gadgetron
   - nvidia/label/cuda-11.6.0
   - conda-forge
   - bioconda
