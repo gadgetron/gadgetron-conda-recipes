@@ -23,11 +23,11 @@ jobs:
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          ./build.sh
+          ./build.sh --include-user-channel
       - name: Build and push conda packages
         shell: bash -l {0}
         if: ${{ github.event_name == 'push' }}
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          ./build.sh --token "$ANACONDA_TOKEN" --push
+          ./build.sh --include-user-channel --token "$ANACONDA_TOKEN" --push
