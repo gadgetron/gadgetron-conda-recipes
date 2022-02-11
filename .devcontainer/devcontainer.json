@@ -1,0 +1,32 @@
+{
+    "name": "gadgetron-conda-recipes",
+
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": "../"
+    },
+
+    // Set default container specific settings.json values on container create.
+    "settings": {
+      "files.trimFinalNewlines": true,
+      "files.trimTrailingWhitespace": true,
+      "files.insertFinalNewline": true,
+
+      "shellcheck.customArgs": ["-x"],
+      "shellcheck.useWorkspaceRootAsCwd": true
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "oderwat.indent-rainbow",
+      "timonwong.shellcheck"
+    ],
+
+    "remoteUser": "vscode",
+    "features": {
+      "docker-from-docker": "20.10",
+      "git": "os-provided"
+    },
+  }
