@@ -25,4 +25,11 @@ requirements:
     - fftw=3.3.9
 
 about:
-  home:
+  home: https://github.com/ismrmrd/ismrmrd
+  license: MIT
+  summary: 'ISMRM Raw Data Format (ISMRMRD)'
+  description: |
+    Libraries and tools for working with data in the ISMRM Raw Data (ISMRMRD or MRD).
+  dev_url: https://github.com/ismrmrd/ismrmrd
+  doc_url: https://github.com/ismrmrd/ismrmrd
+  doc_source_url: https://github.com/ismrmrd/ismrmrd/blob/master/README.md
