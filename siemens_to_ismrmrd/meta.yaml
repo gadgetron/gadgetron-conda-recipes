@@ -1,6 +1,6 @@
 package:
   name: siemens_to_ismrmrd
-  version: 1.0.2.1
+  version: 1.0.1.1
 
 source:
   git_rev: 6d0ab3d3d0c8ade5c0526db1c6af9825008425ad
