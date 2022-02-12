@@ -17,12 +17,12 @@ Options:
   --include-user-channel                 Add a "-c https://anaconda.org/<user>" to list of channels.
   --clean                                Clean build directory
   --push                                 Push package to anaconda channel
-  --force                                Force push even if package exists  
+  --force                                Force push even if package exists
   -h, --help  Brings up this menu
 EOF
 }
 
-all_packages=("ismrmrd" "ismrmrd-python" "siemens_to_ismrmrd" "range-v3" "gadgetron-python" "gadgetron")
+all_packages=("ismrmrd" "ismrmrd-python" "mrd-storage-server" "siemens_to_ismrmrd" "range-v3" "gadgetron-python" "gadgetron")
 packages_to_build=()
 user="gadgetron"
 
@@ -80,7 +80,7 @@ if [[ -n "${push:-}" ]] && [[ -z "${token:-}" ]]; then
 fi
 
 if [ ${#packages_to_build[@]} -eq 0 ]; then
-    packages_to_build=("${all_packages[@]}") 
+    packages_to_build=("${all_packages[@]}")
 fi
 
 # Build up channel directives
