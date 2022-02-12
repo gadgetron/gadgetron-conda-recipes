@@ -1,6 +1,6 @@
 package:
   name: mrd-storage-server
-  version: 1.5.0
+  version: 0.0.7
 
 source:
   git_rev: v0.0.7
