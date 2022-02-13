@@ -8,7 +8,7 @@ source:
 
 requirements:
   build:
-    - boost=1.76.0
+    - boost {{ boost }}
     - cmake>=3.20.0
     - fftw=3.3.9
     - gcc_linux-64>=9.0.0
@@ -19,7 +19,7 @@ requirements:
     - pugixml=1.11.4
 
   run:
-    - boost=1.76.0
+    - boost
     - hdf5=1.10.6
     - pugixml=1.11.4
     - fftw=3.3.9
