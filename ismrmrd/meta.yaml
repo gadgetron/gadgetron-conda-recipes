@@ -16,12 +16,10 @@ requirements:
     - git
     - hdf5=1.10.6
     - ninja=1.10.*
-    - pugixml=1.11.4
 
   run:
     - boost=1.76.0
     - hdf5=1.10.6
-    - pugixml=1.11.4
     - fftw=3.3.9
 
 about:
