@@ -9,10 +9,12 @@ source:
 requirements:
   build:
     - boost=1.76.0
-    - clang>=12.0.0
-    - clangxx>=12.0.0
+    - clang>=12.0.0        # [osx]
+    - clangxx>=12.0.0      # [osx]
     - cmake>=3.20.0
     - fftw=3.3.9
+    - gcc_linux-64>=9.0.0  # [linux64]
+    - gxx_linux-64>=9.0.0  # [linux64]
     - git
     - hdf5=1.10.6
     - ninja=1.10.*
