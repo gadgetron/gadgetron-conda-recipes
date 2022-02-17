@@ -1,9 +1,9 @@
 package:
   name: siemens_to_ismrmrd
-  version: 1.0.2
+  version: 1.1.0
 
 source:
-  git_rev: c353164e672088e8ec377d950bf973f882b28107
+  git_rev: 5bc4aedfb8b53c35d26dae0972bcdabdba512451
   git_url: https://github.com/ismrmrd/siemens_to_ismrmrd
 
 requirements:
@@ -12,13 +12,13 @@ requirements:
     - cmake>=3.20.0
     - gcc_linux-64>=9.0.0
     - gxx_linux-64>=9.0.0
-    - ismrmrd=1.5.1
+    - ismrmrd=1.7.0
     - libxml2=2.9.12
     - libxslt=1.1.33 
     - ninja=1.10.*
 
   run:
-    - ismrmrd=1.5.1
+    - ismrmrd=1.7.0
     - boost=1.76.0
     - libxml2=2.9.12
     - libxslt=1.1.33 
