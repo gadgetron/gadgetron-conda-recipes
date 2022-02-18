@@ -26,9 +26,9 @@ jobs:
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         if: os == 'ubuntu-latest'
-          - run: ./build.sh --include-user-channel
+          run: ./build.sh --include-user-channel
         if: os == 'macos-latest'
-          - run: ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
+          run: ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
       - name: Build and push conda packages
         shell: bash -l {0}
         if: ${{ github.event_name == 'push' }}
