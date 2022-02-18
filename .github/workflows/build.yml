@@ -25,11 +25,10 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
-        - os: ubuntu-latest
-          run: |
+        run: |
+          if: os == 'ubuntu-latest'
             ./build.sh --include-user-channel
-        - os: macos-latest
-          run: |
+          if: os == 'macos-latest'
             ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
       - name: Build and push conda packages
         shell: bash -l {0}
