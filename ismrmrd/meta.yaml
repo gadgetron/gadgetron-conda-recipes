@@ -1,9 +1,9 @@
 package:
   name: ismrmrd
-  version: 1.6.0
+  version: 1.7.0
 
 source:
-  git_rev: 90eaba52cb5be43a5806c88ae3015db95fea9eeb
+  git_rev: 31b3f1ed401761616fbf05df427bfa566fae06ae
   git_url: https://github.com/ismrmrd/ismrmrd
 
 requirements:
