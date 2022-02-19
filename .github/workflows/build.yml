@@ -48,4 +48,4 @@ jobs:
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p # siemens_to_ismrmrd
+          ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3
