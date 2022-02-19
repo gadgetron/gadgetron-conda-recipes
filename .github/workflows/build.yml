@@ -20,8 +20,6 @@ jobs:
       - name: Build conda packages
         shell: bash -l {0}
         if: ${{ github.event_name == 'pull_request' }}
-        env:
-          ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
           ./build.sh --include-user-channel
       - name: Build and push conda packages
@@ -45,7 +43,13 @@ jobs:
       - name: Build macos conda packages
         shell: bash -l {0}
         if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
+      - name: Build and push macos conda packages
+        shell: bash -l {0}
+        if: ${{ github.event_name == 'push' }}
         env:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
-          ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3
+          ./build.sh --include-user-channel --token "$ANACONDA_TOKEN" --push -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
+
