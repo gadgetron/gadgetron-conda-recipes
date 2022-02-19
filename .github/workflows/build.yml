@@ -31,7 +31,6 @@ jobs:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
           ./build.sh --include-user-channel --token "$ANACONDA_TOKEN" --push
-
   build-macos-conda-packages:
     runs-on: macos-latest
     steps:
