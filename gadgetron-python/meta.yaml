@@ -8,14 +8,14 @@ source:
 
 requirements:
   build:
-    - python>=3.6
+    - python
     - multimethod>=1.0
     - numpy>=1.5.1
     - ismrmrd-python>=1.9.5
     - pyfftw>=0.11.0
 
   run:
-    - python>=3.6
+    - python
     - multimethod>=1.0
     - numpy>=1.5.1
     - ismrmrd-python>=1.9.5
