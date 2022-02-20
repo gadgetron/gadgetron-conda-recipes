@@ -20,8 +20,6 @@ jobs:
       - name: Build conda packages
         shell: bash -l {0}
         if: ${{ github.event_name == 'pull_request' }}
-        env:
-          ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
           ./build.sh --include-user-channel
       - name: Build and push conda packages
@@ -31,3 +29,27 @@ jobs:
           ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         run: |
           ./build.sh --include-user-channel --token "$ANACONDA_TOKEN" --push
+
+  build-macos-conda-packages:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: gadgetron-conda-recipes
+          environment-file: environment.yml
+          python-version: 3.9
+          auto-activate-base: false
+      - name: Build macos conda packages
+        shell: bash -l {0}
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          ./build.sh --include-user-channel -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
+      - name: Build and push macos conda packages
+        shell: bash -l {0}
+        if: ${{ github.event_name == 'push' }}
+        env:
+          ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
+        run: |
+          ./build.sh --include-user-channel --token "$ANACONDA_TOKEN" --push -p cpr -p gadgetron-python -p ismrmrd -p ismrmrd-python -p mrd-storage-server -p range-v3 -p siemens_to_ismrmrd
+
