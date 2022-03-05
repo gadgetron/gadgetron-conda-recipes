@@ -1,9 +1,9 @@
 package:
   name: ismrmrd-python
-  version: 1.9.6
+  version: 1.9.8
 
 source:
-  git_rev: c096dedfe8de59f52d1820e68abc34e649a74309
+  git_rev: v1.9.8
   git_url: https://github.com/ismrmrd/ismrmrd-python
 
 requirements:
@@ -11,10 +11,10 @@ requirements:
     - numpy>=1.22.0
     - h5py>=2.3
     - nose>=1.0
-    - xsdata=21.12
+    - xsdata>=22.2
 
   run:
-    - xsdata=21.12
+    - xsdata>=22.2
     - numpy>=1.22.0
     - h5py>=2.3
 
