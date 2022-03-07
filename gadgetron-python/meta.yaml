@@ -6,6 +6,9 @@ source:
   git_rev: 57dfba04bc5b608a48a60527ee812200fde6ff50
   git_url: https://github.com/gadgetron/gadgetron-python
 
+build:
+  preserve_egg_dir: True            # [osx]
+
 requirements:
   build:
     - python
