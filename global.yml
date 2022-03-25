@@ -1,5 +1,5 @@
 channels:
-  - nvidia/label/cuda-11.6.1
+  - nvidia
   - conda-forge
   - bioconda
   - defaults
