@@ -1,9 +1,9 @@
 package:
   name: gadgetron
-  version: 4.2.1
+  version: 4.2.2
 
 source:
-  git_rev: fcea9bd9b9f10781302a026d0fe3e4a0daf053ac
+  git_rev: f2b07cc7675e7ad398fd4ad2154650ddcabada12
   git_url: https://github.com/gadgetron/gadgetron
 
 requirements:
