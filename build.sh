@@ -22,7 +22,7 @@ Options:
 EOF
 }
 
-all_packages=("ismrmrd" "ismrmrd-python" "mrd-storage-server" "siemens_to_ismrmrd" "range-v3" "cpr" "gadgetron-python" "gadgetron")
+all_packages=("ismrmrd" "ismrmrd-python" "mrd-storage-server" "siemens_to_ismrmrd" "range-v3" "cpr" "gadgetron-python")
 packages_to_build=()
 user="gadgetron"
 
