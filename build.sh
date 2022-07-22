@@ -75,7 +75,7 @@ done
 
 if [[ -n "${push:-}" ]] && [[ -z "${token:-}" ]]; then
   echo "You cannot push to anaconda without a token"
-  echo "Please supplu token with --token argument"
+  echo "Please supply token with --token argument"
   exit 1
 fi
 
