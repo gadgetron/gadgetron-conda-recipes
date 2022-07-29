@@ -22,7 +22,7 @@ Options:
 EOF
 }
 
-all_packages=("ismrmrd" "ismrmrd-python" "mrd-storage-server" "siemens_to_ismrmrd" "range-v3" "cpr" "gadgetron-python" "gadgetron")
+all_packages=("ismrmrd" "ismrmrd-python" "mrd-storage-server" "siemens_to_ismrmrd" "range-v3" "cpr" "gadgetron-python")
 packages_to_build=()
 user="gadgetron"
 
@@ -75,7 +75,7 @@ done
 
 if [[ -n "${push:-}" ]] && [[ -z "${token:-}" ]]; then
   echo "You cannot push to anaconda without a token"
-  echo "Please supplu token with --token argument"
+  echo "Please supply token with --token argument"
   exit 1
 fi
 
