@@ -22,7 +22,7 @@ Options:
 EOF
 }
 
-all_packages=("range-v3" "cpr" "gadgetron-python")
+all_packages=("range-v3" "cpr")
 packages_to_build=()
 user="gadgetron"
 
