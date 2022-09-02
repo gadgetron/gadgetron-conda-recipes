@@ -15,7 +15,6 @@ requirements:
     - gxx_linux-64>=9.0.0  # [linux64]
     - libcurl=7.79.1
     - ninja=1.10.*
-    - openssl=3.0.5        # [osx]
 
   run:
     - libcurl=7.79.1
