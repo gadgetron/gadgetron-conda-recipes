@@ -1,9 +1,9 @@
 package:
   name: cpr
-  version: 1.7.2
+  version: 1.9.2
 
 source:
-  git_rev: beb9e98806bb84bcc130a2cebfbcbbc6ce62b335
+  git_rev: f88fd7737de3e640c61703eb57a0fa0ce00c60cd
   git_url: https://github.com/libcpr/cpr
 
 requirements:
